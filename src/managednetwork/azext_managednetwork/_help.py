@@ -9,168 +9,168 @@
 from knack.help_files import helps  # pylint: disable=unused-import
 
 
-helps['managed-network'] = """
+helps['managednetwork'] = """
     type: group
     short-summary: Commands to manage managed network.
 """
 
-helps['managed-network create'] = """
+helps['managednetwork create'] = """
     type: command
     short-summary: create managed network.
     examples:
       - name: ManagedNetworksPut
         text: |-
-               az managed-network create --resource-group "myResourceGroup" --name "myManagedNetwork" \\
+               az managednetwork create --resource-group "myResourceGroup" --name "myManagedNetwork" \\
                --location "eastus"
 """
 
-helps['managed-network update'] = """
+helps['managednetwork update'] = """
     type: command
     short-summary: update managed network.
     examples:
       - name: ManagedNetworksPatch
         text: |-
-               az managed-network update --resource-group "myResourceGroup" --name "myManagedNetwork"
+               az managednetwork update --resource-group "myResourceGroup" --name "myManagedNetwork"
 """
 
-helps['managed-network delete'] = """
+helps['managednetwork delete'] = """
     type: command
     short-summary: delete managed network.
     examples:
       - name: ManagedNetworksDelete
         text: |-
-               az managed-network delete --resource-group "myResourceGroup" --name "myManagedNetwork"
+               az managednetwork delete --resource-group "myResourceGroup" --name "myManagedNetwork"
 """
 
-helps['managed-network list'] = """
+helps['managednetwork list'] = """
     type: command
     short-summary: list managed network.
 """
 
-helps['managed-network show'] = """
+helps['managednetwork show'] = """
     type: command
     short-summary: show managed network.
 """
 
-helps['managed-network'] = """
+helps['managednetwork'] = """
     type: group
     short-summary: Commands to manage scope assignment.
 """
 
-helps['managed-network create'] = """
+helps['managednetwork create'] = """
     type: command
     short-summary: create scope assignment.
     examples:
       - name: ScopeAssignmentsPut
         text: |-
-               az managed-network create --scope "subscriptions/subscriptionC" --name \\
+               az managednetwork create --scope "subscriptions/subscriptionC" --name \\
                "subscriptionCAssignment" --assigned-managed-network "subscriptions/subscriptionA/resource
                Groups/myResourceGroup/providers/Microsoft.ManagedNetwork/managedNetworks/myManagedNetwork
                "
 """
 
-helps['managed-network update'] = """
+helps['managednetwork update'] = """
     type: command
     short-summary: update scope assignment.
 """
 
-helps['managed-network delete'] = """
+helps['managednetwork delete'] = """
     type: command
     short-summary: delete scope assignment.
     examples:
       - name: ScopeAssignmentsDelete
         text: |-
-               az managed-network delete --scope "subscriptions/subscriptionC" --name \\
+               az managednetwork delete --scope "subscriptions/subscriptionC" --name \\
                "subscriptionCAssignment"
 """
 
-helps['managed-network list'] = """
+helps['managednetwork list'] = """
     type: command
     short-summary: list scope assignment.
 """
 
-helps['managed-network show'] = """
+helps['managednetwork show'] = """
     type: command
     short-summary: show scope assignment.
 """
 
-helps['managed-network managed-network-group'] = """
+helps['managednetwork managed-network-group'] = """
     type: group
     short-summary: Commands to manage managed network group.
 """
 
-helps['managed-network managed-network-group create'] = """
+helps['managednetwork managed-network-group create'] = """
     type: command
     short-summary: create managed network group.
     examples:
       - name: ManagementNetworkGroupsPut
         text: |-
-               az managed-network managed-network-group create --resource-group "myResourceGroup" \\
+               az managednetwork managed-network-group create --resource-group "myResourceGroup" \\
                --managed-network-name "myManagedNetwork" --name "myManagedNetworkGroup1"
 """
 
-helps['managed-network managed-network-group update'] = """
+helps['managednetwork managed-network-group update'] = """
     type: command
     short-summary: update managed network group.
 """
 
-helps['managed-network managed-network-group delete'] = """
+helps['managednetwork managed-network-group delete'] = """
     type: command
     short-summary: delete managed network group.
     examples:
       - name: ManagementNetworkGroupsDelete
         text: |-
-               az managed-network managed-network-group delete --resource-group "myResourceGroup" \\
+               az managednetwork managed-network-group delete --resource-group "myResourceGroup" \\
                --managed-network-name "myManagedNetwork" --name "myManagedNetworkGroup1"
 """
 
-helps['managed-network managed-network-group list'] = """
+helps['managednetwork managed-network-group list'] = """
     type: command
     short-summary: list managed network group.
 """
 
-helps['managed-network managed-network-group show'] = """
+helps['managednetwork managed-network-group show'] = """
     type: command
     short-summary: show managed network group.
 """
 
-helps['managed-network managed-network-peering-policy'] = """
+helps['managednetwork managed-network-peering-policy'] = """
     type: group
     short-summary: Commands to manage managed network peering policy.
 """
 
-helps['managed-network managed-network-peering-policy create'] = """
+helps['managednetwork managed-network-peering-policy create'] = """
     type: command
     short-summary: create managed network peering policy.
     examples:
       - name: ManagedNetworkPeeringPoliciesPut
         text: |-
-               az managed-network managed-network-peering-policy create --resource-group \\
+               az managednetwork managed-network-peering-policy create --resource-group \\
                "myResourceGroup" --managed-network-name "myManagedNetwork" --name "myHubAndSpoke" --type \\
                "HubAndSpokeTopology"
 """
 
-helps['managed-network managed-network-peering-policy update'] = """
+helps['managednetwork managed-network-peering-policy update'] = """
     type: command
     short-summary: update managed network peering policy.
 """
 
-helps['managed-network managed-network-peering-policy delete'] = """
+helps['managednetwork managed-network-peering-policy delete'] = """
     type: command
     short-summary: delete managed network peering policy.
     examples:
       - name: ManagedNetworkPeeringPoliciesDelete
         text: |-
-               az managed-network managed-network-peering-policy delete --resource-group \\
+               az managednetwork managed-network-peering-policy delete --resource-group \\
                "myResourceGroup" --managed-network-name "myManagedNetwork" --name "myHubAndSpoke"
 """
 
-helps['managed-network managed-network-peering-policy list'] = """
+helps['managednetwork managed-network-peering-policy list'] = """
     type: command
     short-summary: list managed network peering policy.
 """
 
-helps['managed-network managed-network-peering-policy show'] = """
+helps['managednetwork managed-network-peering-policy show'] = """
     type: command
     short-summary: show managed network peering policy.
 """
