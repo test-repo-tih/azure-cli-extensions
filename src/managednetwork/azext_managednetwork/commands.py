@@ -14,7 +14,7 @@ def load_command_table(self, _):
 
     from ._client_factory import cf_managed_networks
     managednetwork_managed_networks = CliCommandType(
-        operations_tmpl='azure.mgmt.managednetwork.operations.managed_networks_operations#ManagedNetworksOperations.{}',
+        operations_tmpl='azext_managednetwork.vendored_sdks.managednetwork.operations._services_operations##ManagedNetworksOperations.{}',
         client_factory=cf_managed_networks)
     with self.command_group('managednetwork', managednetwork_managed_networks, client_factory=cf_managed_networks) as g:
         g.custom_command('create', 'create_managednetwork')
