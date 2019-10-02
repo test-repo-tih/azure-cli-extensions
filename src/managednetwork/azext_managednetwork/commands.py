@@ -25,7 +25,7 @@ def load_command_table(self, _):
 
     from ._client_factory import cf_scope_assignments
     managednetwork_scope_assignments = CliCommandType(
-        operations_tmpl='azext_managednetwork.vendored_sdks.managednetwork.scope_assignments#ScopeAssignmentsOperations.{}',
+        operations_tmpl='azext_managednetwork.vendored_sdks.managednetwork._managed_network_management_client.scope_assignments#ScopeAssignmentsOperations.{}',
         client_factory=cf_scope_assignments)
     with self.command_group('managednetwork', managednetwork_scope_assignments, client_factory=cf_scope_assignments) as g:
         g.custom_command('create', 'create_managednetwork')
