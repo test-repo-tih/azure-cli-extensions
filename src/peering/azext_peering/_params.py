@@ -37,7 +37,7 @@ def load_arguments(self, _):
     with self.argument_context('peering asn delete') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
 
-    with self.argument_context('peering asn list') as c:
+    # with self.argument_context('peering asn list') as c:
 
     with self.argument_context('peering asn show') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
