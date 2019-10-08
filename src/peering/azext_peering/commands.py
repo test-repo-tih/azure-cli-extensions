@@ -28,7 +28,7 @@ def load_command_table(self, _):
         operations_tmpl='azext_peering.vendored_sdks.peering.operations._peerings_operations#PeeringsOperations.{}',
         client_factory=cf_peerings)
     with self.command_group('peering asn', peering_peerings, client_factory=cf_peerings) as g:
-        g.custom_command('create', 'create_peering asn')
+        g.custom_command('create', 'create_peering_asn')
         g.generic_update_command('update', custom_func_name='update_peering_asn')
         g.command('delete', 'delete')
         g.custom_command('list', 'list_peering_asn')
