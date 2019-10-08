@@ -9,40 +9,40 @@
 from knack.help_files import helps  # pylint: disable=unused-import
 
 
-helps['peering'] = """
+helps['peering asn'] = """
     type: group
     short-summary: Commands to manage peer asn.
 """
 
-helps['peering create'] = """
+helps['peering asn create'] = """
     type: command
     short-summary: create peer asn.
     examples:
       - name: Create a peer ASN
         text: |-
-               az peering create --name "peerAsnName" --peer-asn "65000" --peer-name "Contoso"
+               az peering asn create --name "peerAsnName" --peer-asn "65000" --peer-name "Contoso"
 """
 
-helps['peering update'] = """
+helps['peering asn update'] = """
     type: command
     short-summary: update peer asn.
 """
 
-helps['peering delete'] = """
+helps['peering asn delete'] = """
     type: command
     short-summary: delete peer asn.
     examples:
       - name: Delete a peer ASN
         text: |-
-               az peering delete --name "peerAsnName"
+               az peering asn delete --name "peerAsnName"
 """
 
-helps['peering list'] = """
+helps['peering asn list'] = """
     type: command
     short-summary: list peer asn.
 """
 
-helps['peering show'] = """
+helps['peering asn show'] = """
     type: command
     short-summary: show peer asn.
 """
@@ -96,86 +96,86 @@ helps['peering show'] = """
     short-summary: show peering.
 """
 
-helps['peering prefixe'] = """
+helps['peering prefix'] = """
     type: group
-    short-summary: Commands to manage prefixe.
+    short-summary: Commands to manage prefixes.
 """
 
-helps['peering prefixe create'] = """
+helps['peering prefix create'] = """
     type: command
-    short-summary: create prefixe.
+    short-summary: create prefix.
     examples:
       - name: Create or update a prefix for the peering service
         text: |-
-               az peering prefixe create --resource-group "rgName" --peering-service-name \\
+               az peering prefix create --resource-group "rgName" --peering-service-name \\
                "peeringServiceName" --name "peeringServicePrefixName" --prefix "192.168.1.0/24"
 """
 
-helps['peering prefixe update'] = """
+helps['peering prefix update'] = """
     type: command
-    short-summary: update prefixe.
+    short-summary: update prefix.
 """
 
-helps['peering prefixe delete'] = """
+helps['peering prefix delete'] = """
     type: command
-    short-summary: delete prefixe.
+    short-summary: delete prefix.
     examples:
       - name: Delete a prefix associated with the peering service
         text: |-
-               az peering prefixe delete --resource-group "rgName" --peering-service-name \\
+               az peering prefix delete --resource-group "rgName" --peering-service-name \\
                "peeringServiceName" --name "peeringServicePrefixName"
 """
 
-helps['peering prefixe list'] = """
+helps['peering prefix list'] = """
     type: command
-    short-summary: list prefixe.
+    short-summary: list prefix.
 """
 
-helps['peering prefixe show'] = """
+helps['peering prefix show'] = """
     type: command
-    short-summary: show prefixe.
+    short-summary: show prefix.
 """
 
-helps['peering'] = """
+helps['peering service'] = """
     type: group
     short-summary: Commands to manage peering service.
 """
 
-helps['peering create'] = """
+helps['peering service create'] = """
     type: command
     short-summary: create peering service.
     examples:
       - name: Create a  peering service
         text: |-
-               az peering create --resource-group "rgName" --name "peeringServiceName" \\
+               az peering service create --resource-group "rgName" --name "peeringServiceName" \\
                --peering-service-location "state1" --peering-service-provider "serviceProvider1" \\
                --location "eastus"
 """
 
-helps['peering update'] = """
+helps['peering service update'] = """
     type: command
     short-summary: update peering service.
     examples:
       - name: Update peering service tags
         text: |-
-               az peering update --resource-group "rgName" --name "peeringServiceName"
+               az peering service update --resource-group "rgName" --name "peeringServiceName"
 """
 
-helps['peering delete'] = """
+helps['peering service delete'] = """
     type: command
     short-summary: delete peering service.
     examples:
       - name: Delete a peering service
         text: |-
-               az peering delete --resource-group "rgName" --name "peeringServiceName"
+               az peering service delete --resource-group "rgName" --name "peeringServiceName"
 """
 
-helps['peering list'] = """
+helps['peering service list'] = """
     type: command
     short-summary: list peering service.
 """
 
-helps['peering show'] = """
+helps['peering service show'] = """
     type: command
     short-summary: show peering service.
 """
