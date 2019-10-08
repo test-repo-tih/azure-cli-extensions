@@ -36,7 +36,7 @@ def load_command_table(self, _):
 
     from ._client_factory import cf_prefixes
     peering_prefixes = CliCommandType(
-        operations_tmpl='azext_healthcare.vendored_sdks.peering.operations._prefixes_operations#PrefixesOperations.{}',
+        operations_tmpl='azext_peering.vendored_sdks.peering.operations._prefixes_operations#PrefixesOperations.{}',
         client_factory=cf_prefixes)
     with self.command_group('peering prefix', peering_prefixes, client_factory=cf_prefixes) as g:
         g.custom_command('create', 'create_peering_prefix')
