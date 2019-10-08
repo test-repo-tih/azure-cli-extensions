@@ -59,8 +59,8 @@ helps['peering create'] = """
       - name: Create a direct peering
         text: |-
                az peering create --resource-group "rgName" --name "peeringName" --sku-name \\
-               "Basic_Direct_Free" --kind "Direct" --peering-location "peeringLocation0" --location \\
-               "eastus"
+               "Basic_Direct_Free" --kind "Direct" --direct-direct-peering-type "Edge" \\
+               --peering-location "peeringLocation0" --location "eastus"
       - name: Create an exchange peering
         text: |-
                az peering create --resource-group "rgName" --name "peeringName" --sku-name \\
@@ -96,44 +96,44 @@ helps['peering show'] = """
     short-summary: show peering.
 """
 
-helps['peering prefix'] = """
+helps['peering service prefix'] = """
     type: group
-    short-summary: Commands to manage prefixes.
+    short-summary: Commands to manage prefixe.
 """
 
-helps['peering prefix create'] = """
+helps['peering service prefix create'] = """
     type: command
-    short-summary: create prefix.
+    short-summary: create prefixe.
     examples:
       - name: Create or update a prefix for the peering service
         text: |-
-               az peering prefix create --resource-group "rgName" --peering-service-name \\
+               az peering service prefix create --resource-group "rgName" --peering-service-name \\
                "peeringServiceName" --name "peeringServicePrefixName" --prefix "192.168.1.0/24"
 """
 
-helps['peering prefix update'] = """
+helps['peering service prefix update'] = """
     type: command
-    short-summary: update prefix.
+    short-summary: update prefixe.
 """
 
-helps['peering prefix delete'] = """
+helps['peering service prefix delete'] = """
     type: command
-    short-summary: delete prefix.
+    short-summary: delete prefixe.
     examples:
       - name: Delete a prefix associated with the peering service
         text: |-
-               az peering prefix delete --resource-group "rgName" --peering-service-name \\
+               az peering service prefix delete --resource-group "rgName" --peering-service-name \\
                "peeringServiceName" --name "peeringServicePrefixName"
 """
 
-helps['peering prefix list'] = """
+helps['peering service prefix list'] = """
     type: command
-    short-summary: list prefix.
+    short-summary: list prefixe.
 """
 
-helps['peering prefix show'] = """
+helps['peering service prefix show'] = """
     type: command
-    short-summary: show prefix.
+    short-summary: show prefixe.
 """
 
 helps['peering service'] = """
