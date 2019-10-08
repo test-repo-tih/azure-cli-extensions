@@ -20,26 +20,26 @@ from azure.cli.core.commands.validators import get_default_location_from_resourc
 def load_arguments(self, _):
     name_arg_type = CLIArgumentType(options_list=('--name', '-n'), metavar='NAME')
 
-    with self.argument_context('peering create') as c:
+    with self.argument_context('peering asn create') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
         c.argument('peer_asn', id_part=None, help='The Autonomous System Number (ASN) of the peer.')
         c.argument('peer_contact_info', id_part=None, help='The contact information of the peer.')
         c.argument('peer_name', id_part=None, help='The name of the peer.')
         c.argument('validation_state', arg_type=get_enum_type(['None', 'Pending', 'Approved', 'Failed']), id_part=None, help='The validation state of the ASN associated with the peer.')
 
-    with self.argument_context('peering update') as c:
+    with self.argument_context('peering asn update') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
         c.argument('peer_asn', id_part=None, help='The Autonomous System Number (ASN) of the peer.')
         c.argument('peer_contact_info', id_part=None, help='The contact information of the peer.')
         c.argument('peer_name', id_part=None, help='The name of the peer.')
         c.argument('validation_state', arg_type=get_enum_type(['None', 'Pending', 'Approved', 'Failed']), id_part=None, help='The validation state of the ASN associated with the peer.')
 
-    with self.argument_context('peering delete') as c:
+    with self.argument_context('peering asn delete') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
 
-    with self.argument_context('peering list') as c:
+    #with self.argument_context('peering list') as c:
 
-    with self.argument_context('peering show') as c:
+    with self.argument_context('peering asn show') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
 
     with self.argument_context('peering create') as c:
@@ -81,33 +81,33 @@ def load_arguments(self, _):
         c.argument('resource_group', resource_group_name_type)
         c.argument('name', id_part=None, help='The name of the peering.')
 
-    with self.argument_context('peering prefixe create') as c:
+    with self.argument_context('peering prefix create') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('peering_service_name', id_part=None, help='The name of the peering service.')
         c.argument('name', id_part=None, help='The name of the prefix.')
         c.argument('prefix', id_part=None, help='The prefix from which your traffic originates.')
 
-    with self.argument_context('peering prefixe update') as c:
+    with self.argument_context('peering prefix update') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('peering_service_name', id_part=None, help='The name of the peering service.')
         c.argument('name', id_part=None, help='The name of the prefix.')
         c.argument('prefix', id_part=None, help='The prefix from which your traffic originates.')
 
-    with self.argument_context('peering prefixe delete') as c:
+    with self.argument_context('peering prefix delete') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('peering_service_name', id_part=None, help='The name of the peering service.')
         c.argument('name', id_part=None, help='The name of the prefix.')
 
-    with self.argument_context('peering prefixe list') as c:
+    with self.argument_context('peering prefix list') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('peering_service_name', id_part=None, help='The name of the peering service.')
 
-    with self.argument_context('peering prefixe show') as c:
+    with self.argument_context('peering prefix show') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('peering_service_name', id_part=None, help='The name of the peering service.')
         c.argument('name', id_part=None, help='The name of the prefix.')
 
-    with self.argument_context('peering create') as c:
+    with self.argument_context('peering service create') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('name', id_part=None, help='The name of the peering service.')
         c.argument('peering_service_location', id_part=None, help='The PeeringServiceLocation of the Customer.')
@@ -115,7 +115,7 @@ def load_arguments(self, _):
         c.argument('location', arg_type=get_location_type(self.cli_ctx))
         c.argument('tags', tags_type)
 
-    with self.argument_context('peering update') as c:
+    with self.argument_context('peering service update') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('name', id_part=None, help='The name of the peering service.')
         c.argument('peering_service_location', id_part=None, help='The PeeringServiceLocation of the Customer.')
@@ -123,13 +123,13 @@ def load_arguments(self, _):
         c.argument('location', arg_type=get_location_type(self.cli_ctx))
         c.argument('tags', tags_type)
 
-    with self.argument_context('peering delete') as c:
+    with self.argument_context('peering service delete') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('name', id_part=None, help='The name of the peering service.')
 
-    with self.argument_context('peering list') as c:
+    with self.argument_context('peering service list') as c:
         c.argument('resource_group', resource_group_name_type)
 
-    with self.argument_context('peering show') as c:
+    with self.argument_context('peering service show') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('name', id_part=None, help='The name of the peering service.')
