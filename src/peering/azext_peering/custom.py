@@ -18,7 +18,13 @@ def create_peering_asn(cmd, client,
                        phone=None,
                        peer_name=None,
                        validation_state=None):
-    return client.create_or_update(peer_asn_name=name, peer_asn=peer_asn)
+    body = {}
+    body['peer_asn'] = peer_asn  # number
+    body.setdefault('peer_contact_info', {})['emails'] = json.loads(emails) if isinstance(emails, str) else emails
+    body.setdefault('peer_contact_info', {})['phone'] = json.loads(phone) if isinstance(phone, str) else phone
+    body['peer_name'] = peer_name  # str
+    body['validation_state'] = validation_state  # str
+    return client.create_or_update(peer_asn_name=name, peer_asn=body)
 
 
 def update_peering_asn(cmd, client, body,
@@ -28,7 +34,13 @@ def update_peering_asn(cmd, client, body,
                        phone=None,
                        peer_name=None,
                        validation_state=None):
-    return client.create_or_update(peer_asn_name=name, peer_asn=peer_asn)
+    body = client.get(peer_asn_name=name).as_dict()
+    body.peer_asn = peer_asn  # number
+    body.peer_contact_info.emails = json.loads(emails) if isinstance(emails, str) else emails
+    body.peer_contact_info.phone = json.loads(phone) if isinstance(phone, str) else phone
+    body.peer_name = peer_name  # str
+    body.validation_state = validation_state  # str
+    return client.create_or_update(peer_asn_name=name, peer_asn=body)
 
 
 def list_peering_asn(cmd, client):
