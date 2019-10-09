@@ -23,14 +23,16 @@ def load_arguments(self, _):
     with self.argument_context('peering asn create') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
         c.argument('peer_asn', id_part=None, help='The Autonomous System Number (ASN) of the peer.')
-        c.argument('peer_contact_info', id_part=None, help='The contact information of the peer.')
+        c.argument('emails', id_part=None, help='The list of email addresses.')
+        c.argument('phone', id_part=None, help='The list of contact numbers.')
         c.argument('peer_name', id_part=None, help='The name of the peer.')
         c.argument('validation_state', arg_type=get_enum_type(['None', 'Pending', 'Approved', 'Failed']), id_part=None, help='The validation state of the ASN associated with the peer.')
 
     with self.argument_context('peering asn update') as c:
         c.argument('name', id_part=None, help='The peer ASN name.')
         c.argument('peer_asn', id_part=None, help='The Autonomous System Number (ASN) of the peer.')
-        c.argument('peer_contact_info', id_part=None, help='The contact information of the peer.')
+        c.argument('emails', id_part=None, help='The list of email addresses.')
+        c.argument('phone', id_part=None, help='The list of contact numbers.')
         c.argument('peer_name', id_part=None, help='The name of the peer.')
         c.argument('validation_state', arg_type=get_enum_type(['None', 'Pending', 'Approved', 'Failed']), id_part=None, help='The validation state of the ASN associated with the peer.')
 

@@ -14,7 +14,8 @@ import json
 def create_peering_asn(cmd, client,
                        name,
                        peer_asn=None,
-                       peer_contact_info=None,
+                       emails=None,
+                       phone=None,
                        peer_name=None,
                        validation_state=None):
     return client.create_or_update(peer_asn_name=name, peer_asn=peer_asn)
@@ -23,7 +24,8 @@ def create_peering_asn(cmd, client,
 def update_peering_asn(cmd, client, body,
                        name,
                        peer_asn=None,
-                       peer_contact_info=None,
+                       emails=None,
+                       phone=None,
                        peer_name=None,
                        validation_state=None):
     return client.create_or_update(peer_asn_name=name, peer_asn=peer_asn)

@@ -20,7 +20,8 @@ helps['peering asn create'] = """
     examples:
       - name: Create a peer ASN
         text: |-
-               az peering asn create --name "peerAsnName" --peer-asn "65000" --peer-name "Contoso"
+               az peering asn create --name "peerAsnName" --peer-asn "65000" --emails \\
+               "abc@contoso.com,xyz@contoso.com" --phone "+1 (234) 567-8900" --peer-name "Contoso"
 """
 
 helps['peering asn update'] = """
