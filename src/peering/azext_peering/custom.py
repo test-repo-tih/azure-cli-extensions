@@ -63,7 +63,21 @@ def create_peering(cmd, client,
                    exchange_peer_asn=None,
                    peering_location=None,
                    tags=None):
-    return client.create_or_update(resource_group_name=resource_group, peering_name=name)
+    body = {}
+    body.setdefault('sku', {})['name'] = sku_name  # str
+    body.setdefault('sku', {})['tier'] = sku_tier  # str
+    body.setdefault('sku', {})['family'] = sku_family  # str
+    body.setdefault('sku', {})['size'] = sku_size  # str
+    body['kind'] = kind  # str
+    body.setdefault('direct', {})['connections'] = json.loads(direct_connections) if isinstance(direct_connections, str) else direct_connections
+    body.setdefault('direct', {})['peer_asn'] = json.loads(direct_peer_asn) if isinstance(direct_peer_asn, str) else direct_peer_asn
+    body.setdefault('direct', {})['direct_peering_type'] = direct_direct_peering_type  # str
+    body.setdefault('exchange', {})['connections'] = json.loads(exchange_connections) if isinstance(exchange_connections, str) else exchange_connections
+    body.setdefault('exchange', {})['peer_asn'] = json.loads(exchange_peer_asn) if isinstance(exchange_peer_asn, str) else exchange_peer_asn
+    body['peering_location'] = peering_location  # str
+    body['location'] = location  # str
+    body['tags'] = tags  # dictionary
+    return client.create_or_update(resource_group_name=resource_group, peering_name=name, peering=body)
 
 
 def update_peering(cmd, client, body,
@@ -82,7 +96,21 @@ def update_peering(cmd, client, body,
                    exchange_peer_asn=None,
                    peering_location=None,
                    tags=None):
-    return client.create_or_update(resource_group_name=resource_group, peering_name=name)
+    body = client.get(resource_group_name=resource_group, peering_name=name).as_dict()
+    body.sku.name = sku_name  # str
+    body.sku.tier = sku_tier  # str
+    body.sku.family = sku_family  # str
+    body.sku.size = sku_size  # str
+    body.kind = kind  # str
+    body.direct.connections = json.loads(direct_connections) if isinstance(direct_connections, str) else direct_connections
+    body.direct.peer_asn = json.loads(direct_peer_asn) if isinstance(direct_peer_asn, str) else direct_peer_asn
+    body.direct.direct_peering_type = direct_direct_peering_type  # str
+    body.exchange.connections = json.loads(exchange_connections) if isinstance(exchange_connections, str) else exchange_connections
+    body.exchange.peer_asn = json.loads(exchange_peer_asn) if isinstance(exchange_peer_asn, str) else exchange_peer_asn
+    body.peering_location = peering_location  # str
+    body.location = location  # str
+    body.tags = tags  # dictionary
+    return client.create_or_update(resource_group_name=resource_group, peering_name=name, peering=body)
 
 
 def list_peering(cmd, client,
@@ -99,7 +127,7 @@ def create_peering_service_prefix(cmd, client,
                                   prefix=None):
     body = {}
     body['prefix'] = prefix  # str
-    return client.create_or_update(resource_group_name=resource_group, peering_service_name=peering_service_name, prefix_name=name, prefix=body)
+    return client.create_or_update(resource_group_name=resource_group, peering_service_name=peering_service_name, prefix_name=name, peering_service_prefix=body)
 
 
 def update_peering_service_prefix(cmd, client, body,
