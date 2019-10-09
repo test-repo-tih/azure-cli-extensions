@@ -121,7 +121,12 @@ def create_peering_service(cmd, client,
                            peering_service_location=None,
                            peering_service_provider=None,
                            tags=None):
-    return client.create_or_update(resource_group_name=resource_group, peering_service_name=name)
+    body = {}
+    body['peering_service_location'] = peering_service_location  # str
+    body['peering_service_provider'] = peering_service_provider  # str
+    body['location'] = location  # str
+    body['tags'] = tags  # dictionary
+    return client.create_or_update(resource_group_name=resource_group, peering_service_name=name, peering_service=body)
 
 
 def update_peering_service(cmd, client, body,
@@ -131,7 +136,12 @@ def update_peering_service(cmd, client, body,
                            peering_service_location=None,
                            peering_service_provider=None,
                            tags=None):
-    return client.create_or_update(resource_group_name=resource_group, peering_service_name=name)
+    body = client.get(resource_group_name=resource_group, peering_service_name=name).as_dict()
+    body.peering_service_location = peering_service_location  # str
+    body.peering_service_provider = peering_service_provider  # str
+    body.location = location  # str
+    body.tags = tags  # dictionary
+    return client.create_or_update(resource_group_name=resource_group, peering_service_name=name, peering_service=body)
 
 
 def list_peering_service(cmd, client,
