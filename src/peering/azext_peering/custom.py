@@ -99,7 +99,7 @@ def create_peering_service_prefix(cmd, client,
                                   prefix=None):
     body = {}
     body['prefix'] = prefix  # str
-    return client.create_or_update(resource_group_name=resource_group, peering_service_name=peering_service_name, prefix_name=name, peering_service_prefix=body)
+    return client.create_or_update(resource_group_name=resource_group, peering_service_name=peering_service_name, prefix_name=name, prefix=body)
 
 
 def update_peering_service_prefix(cmd, client, body,
