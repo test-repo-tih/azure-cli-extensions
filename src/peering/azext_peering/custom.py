@@ -103,10 +103,10 @@ def update_peering(cmd, client, body,
     body.sku.size = sku_size  # str
     body.kind = kind  # str
     body.direct.connections = json.loads(direct_connections) if isinstance(direct_connections, str) else direct_connections
-    body.direct.peer_asn = json.loads(direct_peer_asn) if isinstance(direct_peer_asn, str) else direct_peer_asn
+    body.direct.peer_asn = direct_peer_asn
     body.direct.direct_peering_type = direct_direct_peering_type  # str
     body.exchange.connections = json.loads(exchange_connections) if isinstance(exchange_connections, str) else exchange_connections
-    body.exchange.peer_asn = json.loads(exchange_peer_asn) if isinstance(exchange_peer_asn, str) else exchange_peer_asn
+    body.exchange.peer_asn = exchange_peer_asn
     body.peering_location = peering_location  # str
     body.location = location  # str
     body.tags = tags  # dictionary
