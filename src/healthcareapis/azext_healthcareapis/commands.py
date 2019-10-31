@@ -14,11 +14,25 @@ def load_command_table(self, _):
 
     from ._client_factory import cf_services
     healthcareapis_services = CliCommandType(
-        operations_tmpl='azext_healthcare.vendored_sdks.healthcareapis.operations._services_operations#ServicesOperations.{}',
+        operations_tmpl='azext_healthcareapis.vendored_sdks.healthcareapis.operations._services_operations#ServicesOperations.{}',
         client_factory=cf_services)
     with self.command_group('healthcareapis', healthcareapis_services, client_factory=cf_services) as g:
         g.custom_command('create', 'create_healthcareapis')
         g.custom_command('update', 'update_healthcareapis')
         g.custom_command('delete', 'delete_healthcareapis')
         g.custom_command('list', 'list_healthcareapis')
-        g.custom_command('show', 'show_healthcareapis')
+        g.show_command('show', 'get')
+
+    from ._client_factory import cf_operations
+    healthcareapis_operations = CliCommandType(
+        operations_tmpl='azext_healthcareapis.vendored_sdks.healthcareapis.operations._operations_operations#OperationsOperations.{}',
+        client_factory=cf_operations)
+    with self.command_group('healthcareapis', healthcareapis_operations, client_factory=cf_operations) as g:
+        g.custom_command('list', 'list_healthcareapis')
+
+    from ._client_factory import cf_operation_results
+    healthcareapis_operation_results = CliCommandType(
+        operations_tmpl='azext_healthcareapis.vendored_sdks.healthcareapis.operations._operation_results_operations#OperationResultsOperations.{}',
+        client_factory=cf_operation_results)
+    with self.command_group('healthcareapis operationresult', healthcareapis_operation_results, client_factory=cf_operation_results) as g:
+        g.show_command('show', 'get')

@@ -8,7 +8,7 @@ from azure.cli.core import AzCommandsLoader
 from azext_healthcareapis._help import helps  # pylint: disable=unused-import
 
 
-class HealthcareCommandsLoader(AzCommandsLoader):
+class HealthcareApisCommandsLoader(AzCommandsLoader):
 
     def __init__(self, cli_ctx=None):
         from azure.cli.core.commands import CliCommandType
@@ -16,8 +16,8 @@ class HealthcareCommandsLoader(AzCommandsLoader):
         healthcareapis_custom = CliCommandType(
             operations_tmpl='azext_healthcareapis.custom#{}',
             client_factory=cf_healthcareapis)
-        super(HealthcareCommandsLoader, self).__init__(cli_ctx=cli_ctx,
-                                                       custom_command_type=healthcareapis_custom)
+        super(HealthcareApisCommandsLoader, self).__init__(cli_ctx=cli_ctx,
+                                                           custom_command_type=healthcareapis_custom)
 
     def load_command_table(self, args):
         from azext_healthcareapis.commands import load_command_table
@@ -29,4 +29,4 @@ class HealthcareCommandsLoader(AzCommandsLoader):
         load_arguments(self, command)
 
 
-COMMAND_LOADER_CLS = HealthcareCommandsLoader
+COMMAND_LOADER_CLS = HealthcareApisCommandsLoader

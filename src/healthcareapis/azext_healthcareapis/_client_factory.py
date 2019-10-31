@@ -12,3 +12,11 @@ def cf_healthcareapis(cli_ctx, *_):
 
 def cf_services(cli_ctx, *_):
     return cf_healthcareapis(cli_ctx).services
+
+
+def cf_operations(cli_ctx, *_):
+    return cf_healthcareapis(cli_ctx).operations
+
+
+def cf_operation_results(cli_ctx, *_):
+    return cf_healthcareapis(cli_ctx).operation_results

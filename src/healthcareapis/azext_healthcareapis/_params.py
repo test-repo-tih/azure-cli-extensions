@@ -8,7 +8,6 @@
 
 from azure.cli.core.commands.parameters import (
     tags_type,
-    get_three_state_flag,
     get_enum_type,
     resource_group_name_type,
     get_location_type
@@ -16,6 +15,7 @@ from azure.cli.core.commands.parameters import (
 
 
 def load_arguments(self, _):
+
     with self.argument_context('healthcareapis create') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('name', id_part=None, help='The name of the service instance.')
@@ -62,3 +62,10 @@ def load_arguments(self, _):
     with self.argument_context('healthcareapis show') as c:
         c.argument('resource_group', resource_group_name_type)
         c.argument('name', id_part=None, help='The name of the service instance.')
+
+    with self.argument_context('healthcareapis list') as c:
+        pass
+
+    with self.argument_context('healthcareapis operationresult show') as c:
+        c.argument('location_name', id_part=None, help='The location of the operation.')
+        c.argument('operation_result_id', id_part=None, help='The ID of the operation result to get.')
